@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Toko Mini Amba 🛒</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header>
+  <h2 onclick="goHome()" class="logo">🏠 Toko Mini</h2>
+
+  <div class="nav">
+    <button onclick="toggleCart()">🛒 (<span id="cartCount">0</span>)</button>
+    <button onclick="toggleChat()">💬 CS</button>
+    <button onclick="toggleDark()">🌙</button>
+  </div>
+</header>
+
+<div class="container">
+
+  <input id="search" placeholder="Cari sepatu..." oninput="renderProducts()"/>
+
+  <div id="products" class="grid"></div>
+
+</div>
+
+<!-- CART -->
+<div id="cart" class="cart hidden">
+  <h3>Keranjang</h3>
+  <div id="cartItems"></div>
+  <h4>Total: Rp <span id="total">0</span></h4>
+</div>
+
+<!-- CHAT -->
+<div id="chat" class="chat hidden">
+  <div class="chatHeader">Customer Service 🤖</div>
+  <div id="chatBody" class="chatBody"></div>
+
+  <div class="chatInput">
+    <input id="chatText" placeholder="Tanya apa aja..."/>
+    <button onclick="sendChat()">Kirim</button>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+    </html>
