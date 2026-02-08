@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Toko Mini Amba 🚀</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<header>
+  <h2>🛒 Toko Mini</h2>
+  <div>
+    <button onclick="toggleDark()">🌙</button>
+    <button onclick="toggleCart()">Cart (<span id="cartCount">0</span>)</button>
+  </div>
+</header>
+
+<div class="container">
+
+  <input id="search" placeholder="Cari produk..." oninput="renderProducts()"/>
+  
+  <select id="filter" onchange="renderProducts()">
+    <option value="">Semua</option>
+    <option>Baju</option>
+    <option>Sepatu</option>
+    <option>Celana</option>
+  </select>
+
+  <div id="products" class="grid"></div>
+
+  <div class="admin">
+    <h3>Admin Panel</h3>
+    <input id="name" placeholder="Nama produk">
+    <input id="price" type="number" placeholder="Harga">
+    <input id="img" placeholder="Link gambar">
+    <select id="cat">
+      <option>Baju</option>
+      <option>Sepatu</option>
+      <option>Celana</option>
+    </select>
+    <button onclick="addProduct()">Tambah Produk</button>
+  </div>
+
+</div>
+
+<div id="cart" class="cart hidden">
+  <h3>Keranjang</h3>
+  <div id="cartItems"></div>
+  <h4>Total: Rp <span id="total">0</span></h4>
+</div>
+
+<script src="script.js"></script>
+</body>
+  </html>
